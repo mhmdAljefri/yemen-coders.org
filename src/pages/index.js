@@ -36,9 +36,9 @@ const Section = ({ hint, title, paragraph, style, reverse }) => (
   <section style={{ paddingTop: 50, paddingBottom: 50, ...style }}>
     <Wrapper>
       <StyledSection reverse={reverse}>
-        <div style={{ width: 600 }}>
+        <div style={{ maxWidth: 600 }}>
           <small>{hint}</small>
-          <h2 style={{ fontSize: 60 }}>{title}</h2>
+          <h2 style={{ fontSize: '4rem' }}>{title}</h2>
           <p style={{ fontSize: 25, maxWidth: 400 }}>{paragraph}</p>
           <strong>Sign as</strong>
         </div>
