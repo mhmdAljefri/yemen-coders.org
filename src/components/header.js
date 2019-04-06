@@ -31,8 +31,9 @@ const StyledWrapper = styled.div`
 `
 
 const Header = () => {
-  const [isScrolled, setScrolled] = React.useState(false)
+  const [isScrolled, setScrolled] = React.useState(false);
   React.useEffect(() => {
+
     window.addEventListener('scroll', handleScrolling);
     return () => {
       window.removeEventListener('scroll', handleScrolling);
