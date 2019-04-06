@@ -7,7 +7,8 @@ import SEO from "../components/seo"
 import Wrapper from "../components/wrapper";
 
 const StyledCover = styled.div`
-  height: 100vh;
+  min-height: 100vh;
+  padding: 100px 0;
   position: relative;
   display: flex;
   justify-content: center;
