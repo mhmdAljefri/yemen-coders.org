@@ -25,7 +25,6 @@ const StyledHeader = styled.h1`
   font-weight: bold;
   font-size: 2rem;
   line-height: 2rem;
-  background: #fff;
 `
 
 const StyledSection = styled.section`
