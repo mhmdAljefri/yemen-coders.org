@@ -7,6 +7,7 @@ module.exports = {
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': 'AuthorYaml',
+    'MarkdownRemark.frontmatter.sponsor': 'SponsorYaml',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -34,6 +35,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-transformer-authors-yaml',
+    'gatsby-transformer-sponsors-yaml',
     'gatsby-plugin-netlify',
     'gatsby-plugin-twitter',
     {
