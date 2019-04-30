@@ -3,4 +3,5 @@
 # will be a link to the provided url.
 adenUni:
   name: Aden Universty
+  image: ../images/aulogo.png
   url: http://www.aden-univ.net

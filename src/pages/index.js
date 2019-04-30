@@ -5,10 +5,22 @@ import { ChevronDown } from "react-feather";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Wrapper from "../components/wrapper";
+import Input from "../components/input";
+
+const StyledForm = styled.form`
+  width: 50%;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+`
 
 const StyledCover = styled.div`
+<<<<<<< 890fcd4ea24ea04ed4f6fe41f0b5f3bb59e0757e
   min-height: 100vh;
   padding: 100px 0;
+=======
+  min-height: calc(100vh - 60px);
+>>>>>>> enhancememtn
   position: relative;
   display: flex;
   justify-content: center;
@@ -32,16 +44,27 @@ const StyledSection = styled.section`
   flex-direction: ${({reverse}) => reverse && 'row-reverse'};
 `
 
+const StyledInnerSection = styled.div`
+  width: 50%;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    text-align: center;
+  }
+`
+
+const BigH2 = styled.h2`
+  font-size: 4rem;
+`
+
 const Section = ({ hint, title, paragraph, style, reverse }) => (
   <section style={{ paddingTop: 50, paddingBottom: 50, ...style }}>
     <Wrapper>
       <StyledSection reverse={reverse}>
-        <div style={{ maxWidth: 600 }}>
+        <StyledInnerSection>
           <small>{hint}</small>
-          <h2 style={{ fontSize: '4rem' }}>{title}</h2>
-          <p style={{ fontSize: 25, maxWidth: 400 }}>{paragraph}</p>
-          <strong>Sign as</strong>
-        </div>
+          <BigH2>{title}</BigH2>
+          <p style={{ fontSize: 25 }}>{paragraph}</p>
+        </StyledInnerSection>
         <div>
           {/* <Img src="te" /> */}
         </div>
@@ -139,8 +162,14 @@ const IndexPage = () => (
     <div>
       {sections.map((section, index) => <Section key={index} {...section} />)}
     </div>
-    <Wrapper>
-      <p>No events yet.</p>
+    <Wrapper id="contatct-us" style={{ paddingTop: 50, paddingBottom: 50 }}>
+      <BigH2>Contact us</BigH2>
+      <StyledForm>
+        <Input placeholder="your name" />
+        <Input placeholder="placeholder" />
+        <Input placeholder="placeholder" />
+        <Input placeholder="placeholder" />
+      </StyledForm>
     </Wrapper>
   </Layout>
 )
