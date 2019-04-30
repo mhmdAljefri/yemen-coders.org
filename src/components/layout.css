@@ -629,3 +629,8 @@ pre tt:after {
   box-decoration-break: clone;
 }
 
+.gradient-bg {
+  background-image: linear-gradient(180deg, #c0170b, #9b1212);
+  color: #fff;
+}
+

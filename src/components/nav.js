@@ -50,8 +50,8 @@ const Minus = styled.span`
 `
 const NavList = ({isNavOpen}) => (
   <StyledUl isNavOpen={isNavOpen}>
-    <li><StyledLink to="/">Events</StyledLink></li>
-    <li><StyledLink to="/">Sponsers</StyledLink></li>
+    <li><StyledLink to="/events">Events</StyledLink></li>
+    <li><StyledLink to="/sponsors">Sponsers</StyledLink></li>
     <li><StyledLink to="/">Coaches</StyledLink></li>
     <li><StyledLink to="/">Communties</StyledLink></li>
     <li><StyledLink to="/">Donate</StyledLink></li>
@@ -61,7 +61,7 @@ const Nav = () => {
   const [isBigScreen, setBigScreen] = React.useState(false);
   const [isNavOpen, setNavOpen] = React.useState(false);
   React.useEffect(() => {
-
+    handleScreenSizeing();
     window.addEventListener('resize', handleScreenSizeing);
     return () => {
       window.removeEventListener('resize', handleScreenSizeing);
@@ -69,7 +69,6 @@ const Nav = () => {
   });
 
   const handleScreenSizeing = () => setBigScreen(!!(window.innerWidth > 767))
-  console.log({isBigScreen, window: window.innerWidth})
   const toggleNav = () => setNavOpen(!isNavOpen)
   return (
     isBigScreen ?

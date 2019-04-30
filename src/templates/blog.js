@@ -5,8 +5,9 @@ export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   console.log({data})
-  const { markdownRemark } = data // data.markdownRemark holds our post data
+  const { markdownRemark, allMarkdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
+  console.log({allMarkdownRemark})
   return (
     <div className="blog-post-container">
       <div className="blog-post">

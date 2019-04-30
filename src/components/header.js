@@ -7,7 +7,7 @@ import Wrapper from "./wrapper";
 import { Link } from "gatsby";
 
 const StyledHeader = styled.header`
-  position: fixed;
+  position: sticky;
   right: 0;
   left: 0;
   top: 0;

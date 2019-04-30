@@ -1,6 +1,6 @@
 ---
 title: Gold Sponsors
-list: [
+sponsor: [
   adenUni,
 ]
 ---
