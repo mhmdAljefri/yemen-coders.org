@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout";
+import Layout from "../components/layout"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -12,9 +12,7 @@ export default function Template({
       <div>
         <h1>{frontmatter.title}</h1>
         <h2>{frontmatter.date}</h2>
-        <div
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
   )
@@ -25,8 +23,6 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
         title
       }
     }
