@@ -1,13 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from 'styled-components';
+import styled from "styled-components"
 
-import Nav from "./nav";
-import Wrapper from "./wrapper";
-import { Link } from "gatsby";
+import Nav from "./nav"
+import Wrapper from "./wrapper"
+import { Link } from "gatsby"
 
 const StyledHeader = styled.header`
-  position: sticky;
+  position: fixed;
   right: 0;
   left: 0;
   top: 0;
@@ -16,7 +16,9 @@ const StyledHeader = styled.header`
   height: 60px;
   padding: 0;
   line-height: 60px;
-  box-shadow: ${({ scrolled }) => scrolled && '0 2px 4px -1px rgba(0,0,0,.06), 0 4px 5px 0 rgba(0,0,0,.06), 0 1px 10px 0 rgba(0,0,0,.08)'};
+  box-shadow: ${({ scrolled }) =>
+    scrolled &&
+    "0 2px 4px -1px rgba(0,0,0,.06), 0 4px 5px 0 rgba(0,0,0,.06), 0 1px 10px 0 rgba(0,0,0,.08)"};
 `
 
 const StyledLink = styled(Link)`
@@ -31,14 +33,13 @@ const StyledWrapper = styled.div`
 `
 
 const Header = () => {
-  const [isScrolled, setScrolled] = React.useState(false);
+  const [isScrolled, setScrolled] = React.useState(false)
   React.useEffect(() => {
-
-    window.addEventListener('scroll', handleScrolling);
+    window.addEventListener("scroll", handleScrolling)
     return () => {
-      window.removeEventListener('scroll', handleScrolling);
-    };
-  });
+      window.removeEventListener("scroll", handleScrolling)
+    }
+  })
 
   const handleScrolling = () => setScrolled(!!window.pageYOffset)
   return (
@@ -46,7 +47,10 @@ const Header = () => {
       <Wrapper>
         <StyledWrapper>
           <StyledLink to="/">
-            <h1 className="gradient-color" style={{ lineHeight: '60px', margin: 0, fontSize: 20, }}>
+            <h1
+              className="gradient-color"
+              style={{ lineHeight: "60px", margin: 0, fontSize: 20 }}
+            >
               Yemenies &lt;coders&gt;
             </h1>
           </StyledLink>
@@ -54,7 +58,8 @@ const Header = () => {
         </StyledWrapper>
       </Wrapper>
     </StyledHeader>
-)}
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
