@@ -20,13 +20,15 @@ const Image = ({ style, src = "OAYTJO0.jpg" }) => (
         placeholderImage: file(relativePath: { eq: ${src} }) {
           childImageSharp {
             fluid(maxWidth: 1200) {
-              ...GatsbyImageSharpFluid
+              src
             }
           }
         }
       }
     `}
-    render={data => <Img style={style} fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => (
+      <Img style={style} fluid={data.placeholderImage.childImageSharp.fluid} />
+    )}
   />
 )
 export default Image

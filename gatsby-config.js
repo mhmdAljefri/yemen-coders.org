@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Yemnies Coders Official Site`,
+    title: `Yemen Coders Official Site`,
     description: ``,
-    siteUrl: 'https://yemenies-coders.org',
-    author: `@yemeniesCoders`,
+    siteUrl: "https://yemencoders.org",
+    author: `@yemenCoders`,
   },
   mapping: {
-    'MarkdownRemark.frontmatter.author': 'AuthorYaml',
-    'MarkdownRemark.frontmatter.sponsor': 'SponsorYaml',
+    "MarkdownRemark.frontmatter.author": "AuthorYaml",
+    "MarkdownRemark.frontmatter.sponsor": "SponsorYaml",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,25 +19,25 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'pages',
+        name: "pages",
         path: `${__dirname}/src/pages`,
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'content',
+        name: "content",
         path: `${__dirname}/content/`,
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    'gatsby-transformer-authors-yaml',
-    'gatsby-transformer-sponsors-yaml',
-    'gatsby-plugin-netlify',
-    'gatsby-plugin-twitter',
+    "gatsby-transformer-authors-yaml",
+    "gatsby-transformer-sponsors-yaml",
+    "gatsby-plugin-netlify",
+    "gatsby-plugin-twitter",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
