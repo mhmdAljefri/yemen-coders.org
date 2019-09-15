@@ -1,6 +1,14 @@
-'use strict';
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.onCreateWebpackConfig = require('./gatsby/onCreateWebpackConfig');
-exports.createPages = require('./gatsby/createPages');
-exports.onCreateNode = require('./gatsby/onCreateNode');
-exports.onCreatePage = require('./gatsby/onCreatePage');
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    console.log(slug)
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
+}
